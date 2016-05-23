@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drag and drop</title>   
+        <style>
+            body {
+                padding-left:50px;
+            }
+            .listContainer {
+                 float:left;
+                 margin-right:50px;
+            }
+            .sourceList, .targetList, .eventStatusList { 
+                width: 400px; 
+                min-height:300px; 
+                border: 1px solid #000; 
+                height:300px;
+                overflow-y: scroll;
+                } 
+            .sourceList li { cursor: pointer }
+            
+            .source-avatar { border:1px solid #000; padding: 10px; }
+            
+            .targetList { margin:0px; padding:0px;}
+            .targetList li { list-style:none; margin:0px; }
+            .targetList li .target-item {
+                width:100%;
+                height:50px;
+                font-weight:bold;
+            }            
+        </style> 
+    </head>    
+    <body>
+        <div class="demoLayout" data-dojo-type="app/draganddrop"></div>
+        
+        <script data-dojo-config="parseOnLoad: true, isDebug: true, async: 1,
+            packages: [{
+                name: 'app',
+                location: 'http://localhost:9002/app'       
+            }]"        
+            src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>            
+            
+        <script>
+            require([
+                "app/draganddrop",
+                "dojo/parser",
+                "dojo/domReady!"
+            ], function(draganddrop, parser, domReady) {
+            });
+        </script>
+    </body>
+</html>
